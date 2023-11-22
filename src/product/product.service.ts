@@ -11,7 +11,7 @@ export class ProductService {
     return products;
   }
 
-  async findOne(id: number) {
-    return products.find((product) => product.id === id);
+  async findOne(payload: { id: number }) {
+    return products.find((product) => product.id == payload.id);
   }
 }

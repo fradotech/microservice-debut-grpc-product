@@ -12,7 +12,7 @@ export class ProductController {
   }
 
   @GrpcMethod('ProductService')
-  async findOne(@Payload() id: number) {
-    return await this.productService.findOne(id);
+  async findOne(@Payload() payload: { id: number }) {
+    return await this.productService.findOne(payload);
   }
 }
