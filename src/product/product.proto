@@ -3,7 +3,14 @@ syntax = "proto3";
 package product;
 
 service ProductService {
+  rpc FindAll (Empty) returns (ProductList) {}
   rpc FindOne (ProductById) returns (Product) {}
+}
+
+message Empty {}
+
+message ProductList {
+  repeated Product products = 1;
 }
 
 message ProductById {
