@@ -7,12 +7,12 @@ export class ProductController {
   constructor(private readonly productService: ProductService) {}
 
   @GrpcMethod('ProductService')
-  findAll() {
-    return this.productService.findAll();
+  async findAll() {
+    return { data: await this.productService.findAll() };
   }
 
   @GrpcMethod('ProductService')
-  findOne(@Payload() id: number) {
-    return this.productService.findOne(id);
+  async findOne(@Payload() id: number) {
+    return await this.productService.findOne(id);
   }
 }

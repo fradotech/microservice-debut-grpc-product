@@ -1,15 +1,17 @@
 import { Injectable } from '@nestjs/common';
 
+const products = [
+  { id: 1, name: 'Coklat' },
+  { id: 2, name: 'Stroberi' },
+];
+
 @Injectable()
 export class ProductService {
-  findAll() {
-    return [
-      { id: 1, name: 'John' },
-      { id: 2, name: 'Doe' },
-    ];
+  async findAll() {
+    return await products;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} product`;
+  async findOne(id: number) {
+    return await products.find((product) => product.id === id);
   }
 }
