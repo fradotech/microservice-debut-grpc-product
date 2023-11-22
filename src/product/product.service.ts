@@ -8,10 +8,10 @@ const products = [
 @Injectable()
 export class ProductService {
   async findAll() {
-    return await products;
+    return products;
   }
 
   async findOne(id: number) {
-    return await products.find((product) => product.id === id);
+    return products.find((product) => product.id === id);
   }
 }
