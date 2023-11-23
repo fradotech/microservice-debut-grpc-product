@@ -3,6 +3,7 @@ import { Injectable } from '@nestjs/common';
 const products = [
   { id: 1, name: 'Coklat' },
   { id: 2, name: 'Stroberi' },
+  { id: 2, name: 'Jerukk' },
 ];
 
 @Injectable()
